@@ -21,6 +21,12 @@ PImage Uni;
 void intro()
 {
   background(Uni);
+  
+  stroke(255);
+  fill(0);
+  ellipse(width/2,height/2,150,150);
+  fill(255);
+  triangle(430,250, 430,320, 490,280);
 }
 
 void draw()
