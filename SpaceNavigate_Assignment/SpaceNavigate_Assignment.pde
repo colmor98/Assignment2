@@ -50,8 +50,9 @@ int enter = 0;
 //Font
 PFont font;
 
-//Classes
+//Objects
 Star[] stars = new Star[1];
+Rocket rocket = new Rocket();
 
 void mousePressed()
 {
@@ -137,7 +138,8 @@ void game()
 {
   background(0);
   
-  
+  rocket.x = 75;
+  rocket.display();
 }
 
 void draw()
