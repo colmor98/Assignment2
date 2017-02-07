@@ -8,7 +8,7 @@ A game where a spaceship must navigaye its way through space!
 
 void setup()
 {
-  size(900,562);
+  size(900,562,P2D);
   
   //load images
   Uni = loadImage("Uni.jpg");
@@ -23,6 +23,12 @@ void setup()
     arcStartPositions[i] = PI/8*i;
   }
   
+  button[0] = width/2;
+  button[1] = height/2;
+  button[2] = 150;
+  button[3] = 150;
+  button[4] = 0;
+  
 }
 
 //Globals
@@ -32,19 +38,40 @@ PImage Uni;
 //Variables
 float[] arcStartPositions = new float[3];
 float arcBoundSize, arcMaxBoundSize = 500;
+int[] button = new int[5];
+int col=0;
+int enter = 0;
 
 //Font
 PFont font;
 
+void mousePressed()
+{
+  if( (mouseY <(button[1] + button[3])) && (mouseY > (button[1])) ) 
+  {
+    if( (mouseX <(button[0] + button[2])) && (mouseX > (button[0])) )
+    {
+      col = 124;
+      delay(1000);
+      button[4] = 1;
+    }
+  }
+  
+}
 void intro()
 {
   background(Uni);
   
   stroke(255);
-  fill(0);
-  ellipse(width/2,height/2,150,150);
+  fill(col);
+  ellipse(button[0],button[1],button[2],button[3]);
   fill(255);
   triangle(430,250, 430,320, 490,280);
+  
+  if (button[4] == 1)
+  {
+    enter = 1;
+  }
 }
 
 void load()
@@ -92,17 +119,25 @@ void load()
   
 }//end load
 
+void game()
+{
+  background(Uni);
+}
+
 void draw()
 {
   background(255);
   
-  
-  
   if(frameCount <250)
   {
     load();
-    
-    
+  }
+  
+  intro();
+  
+  if(enter == 1 )
+  {
+    game();
   }
   
 }
