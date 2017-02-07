@@ -9,6 +9,7 @@ A game where a spaceship must navigaye its way through space!
 void setup()
 {
   size(900,562,P2D);
+  smooth();  
   
   //load images
   Uni = loadImage("Uni.jpg");
@@ -29,6 +30,10 @@ void setup()
   button[3] = 150;
   button[4] = 0;
   
+   for (int i = 0; i < stars.length; i++)  
+    {
+      stars[i] = new Star ((color(200)),random(width),0,100);  //element i within stars is a new star with these properties
+    }
 }
 
 //Globals
@@ -44,6 +49,8 @@ int enter = 0;
 
 //Font
 PFont font;
+
+Star[] stars = new Star[1];
 
 void mousePressed()
 {
@@ -121,7 +128,9 @@ void load()
 
 void game()
 {
-  background(Uni);
+  background(0);
+  
+  
 }
 
 void draw()
@@ -140,6 +149,11 @@ void draw()
   if(enter == 1 )
   {
     game();
+    for (int i = 0; i < stars.length; i++)  
+    {
+      stars[i].display();  
+      stars[i].move();     
+    }
   }
   
 }
