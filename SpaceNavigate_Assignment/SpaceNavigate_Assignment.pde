@@ -50,16 +50,17 @@ int enter = 0;
 //Font
 PFont font;
 
+//Classes
 Star[] stars = new Star[1];
 
 void mousePressed()
 {
-  if( (mouseY <(button[1] - 20 + button[3])) && (mouseY > (button[1])) ) 
+  if( (mouseY <(button[1] + button[3])) && (mouseY > (button[1])) ) 
   {
-    if( (mouseX <(button[0] + button[2])) && (mouseX > (button[0])) )
+    if( (mouseX <(button[0]-20  + button[2])) && (mouseX > (button[0])) )
     {
       col = 124;
-      delay(500);
+      delay(100);
       button[4] = 1;
     }
   }
@@ -68,6 +69,11 @@ void mousePressed()
 void intro()
 {
   background(Uni);
+  
+  pushMatrix();
+    textFont(font,50);
+    text("SPACE NAVI-G8",width/2-170,100);
+  popMatrix();
   
   stroke(255);
   fill(col);
@@ -125,6 +131,7 @@ void load()
       }
   
 }//end load
+
 
 void game()
 {

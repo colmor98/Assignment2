@@ -13,20 +13,21 @@ class Star
       ys = ys_;  
     }
 
-void display()  //Controls the appearance of the shape
-{
-  ellipseMode(CENTER); 
-  fill(c);      
-  noStroke();       
-  ellipse(random(width),y,10,10);  //shape of the ellipse created every time
-}
-
-void move()  
-{
-  y = y + ys;      //The y co-ordinate is the sum of the y co-ordinate plus the y speed variable
-  if (y > height)  
+  void display()  //Controls the appearance of the shape
   {
-    y = 0;         
+    ellipseMode(CENTER); 
+    fill(c);      
+    noStroke();       
+    ellipse(random(width),y,10,10);  //shape of the ellipse created every time
   }
-}
+  
+  void move()  
+  {
+    y = y + ys;      //The y co-ordinate is the sum of the y co-ordinate plus the y speed variable
+    if (y > height)  
+    {
+      y = 0;         
+    }
+  }
+  
 }
