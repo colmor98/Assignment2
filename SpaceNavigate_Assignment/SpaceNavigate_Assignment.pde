@@ -140,6 +140,7 @@ void game()
   
   rocket.x = 75;
   rocket.display();
+  rocket.update();
 }
 
 void draw()
@@ -162,6 +163,20 @@ void draw()
     {
       stars[i].display();  
       stars[i].move();     
+    }
+  }
+  
+}
+
+void keyPressed() 
+{
+  
+  if (key == CODED) {
+    if (keyCode == UP) {
+      rocket.ySpeed -= 1;
+    }
+    if (keyCode == DOWN) {
+      rocket.ySpeed += 1;
     }
   }
   
