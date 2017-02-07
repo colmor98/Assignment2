@@ -47,12 +47,12 @@ PFont font;
 
 void mousePressed()
 {
-  if( (mouseY <(button[1] + button[3])) && (mouseY > (button[1])) ) 
+  if( (mouseY <(button[1] - 20 + button[3])) && (mouseY > (button[1])) ) 
   {
     if( (mouseX <(button[0] + button[2])) && (mouseX > (button[0])) )
     {
       col = 124;
-      delay(1000);
+      delay(500);
       button[4] = 1;
     }
   }
@@ -132,8 +132,10 @@ void draw()
   {
     load();
   }
-  
-  intro();
+  else
+  {
+    intro();
+  }
   
   if(enter == 1 )
   {
