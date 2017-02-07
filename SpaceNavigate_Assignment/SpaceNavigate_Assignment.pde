@@ -13,6 +13,9 @@ void setup()
   //load images
   Uni = loadImage("Uni.jpg");
   
+  //load font
+  font = loadFont("Bauhaus93-48.vlw");
+  
   frameRate(40);
   rectMode(CENTER);
   smooth();
@@ -29,6 +32,9 @@ PImage Uni;
 //Variables
 float[] arcStartPositions = new float[3];
 float arcBoundSize, arcMaxBoundSize = 500;
+
+//Font
+PFont font;
 
 void intro()
 {
@@ -58,6 +64,31 @@ void load()
   for(int i=0;i<arcStartPositions.length;i++){
     arcStartPositions[i]+=PI/8;
   }
+  
+  //Text
+  //loading text outputted on screen
+  textFont(font,40);
+  fill(255);
+      if (frameCount <= 50)
+      {
+         text("Loading.", width/2 - 100, height/2); 
+      }
+      if( frameCount <100 && frameCount >= 50)
+      {
+         text("Loading..", width/2 - 100, height/2); 
+      }
+      if( frameCount <150 && frameCount >= 100)
+      {
+         text("Loading...", width/2 - 100, height/2); 
+      }
+      if( frameCount <200 && frameCount >= 150)
+      {
+         text("Loading....", width/2 - 100, height/2); 
+      }
+      if(frameCount<250 && frameCount >=200)
+      {
+        text("Engines firing up!",width/2 - 160,height/2);
+      }
   
 }//end load
 
