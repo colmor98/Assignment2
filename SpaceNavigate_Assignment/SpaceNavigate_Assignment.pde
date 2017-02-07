@@ -87,7 +87,7 @@ void load()
       }
       if(frameCount<250 && frameCount >=200)
       {
-        text("Engines firing up!",width/2 - 160,height/2);
+        text("Setting up!",width/2 - 110,height/2);
       }
   
 }//end load
@@ -96,5 +96,13 @@ void draw()
 {
   background(255);
   
-  load();
+  
+  
+  if(frameCount <250)
+  {
+    load();
+    
+    
+  }
+  
 }
