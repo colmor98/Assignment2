@@ -17,6 +17,10 @@ void setup()
   //load font
   font = loadFont("Bauhaus93-48.vlw");
   
+  // random start values for obstacles
+  barrier1.y = random(50, height - barrier1.h - 50);
+
+  
   frameRate(40);
   rectMode(CENTER);
   smooth();
@@ -55,6 +59,7 @@ PFont font;
 //Classes
 Star[] stars = new Star[1];
 Rocket rocket = new Rocket();
+Barrier barrier1 = new Barrier();
 
 void mousePressed()
 {
@@ -145,6 +150,9 @@ void game()
   rect(0, 0, width+900, 35); // top barrier
   rect(0, height , width+900, 35); // bottom barrier
   popMatrix();
+  
+  barrier1.display(); // obstacles
+  barrier1.update();
   
   rocket.x = 75;
   rocket.display();
