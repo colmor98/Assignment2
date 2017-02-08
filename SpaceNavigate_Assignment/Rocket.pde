@@ -40,6 +40,18 @@ class Rocket
       }
     }
     
+    if ((x + 50 >= barrier2.x && x - 40 <= barrier2.x + barrier2.w
+      && y + 7 >= barrier2.y && y - 7 <= barrier2.y + barrier2.h) ||
+      (x + 25 >= barrier2.x && x - 35 <= barrier2.x + barrier2.w
+      && y + 15 >= barrier2.y && y - 15 <= barrier2.y + barrier2.h)) {
+      if (lives == 1) {
+        rocket.crashed = true;
+      } else {
+        lives--;
+        barrier2.x = 800;
+      }
+    }
+    
     rocketShip();
   }
   

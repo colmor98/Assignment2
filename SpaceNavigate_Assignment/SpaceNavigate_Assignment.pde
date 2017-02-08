@@ -177,6 +177,11 @@ void game()
   text("Lives:", 725, height - 1); // life counter
   text(rocket.lives, 780, height - 1);
   
+  if (rocket.crashed) {
+      textAlign(CENTER);
+      textSize(50);
+      text("GAME OVER", width / 2, height / 2);
+    }
   
 }
 
