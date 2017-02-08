@@ -19,7 +19,8 @@ void setup()
   
   // random start values for obstacles
   barrier1.y = random(50, height - barrier1.h - 50);
-
+  barrier2.y = random(50, height - barrier2.h - 50);
+  barrier2.x = barrier1.x + width / 2;
   
   frameRate(40);
   rectMode(CENTER);
@@ -60,6 +61,8 @@ PFont font;
 Star[] stars = new Star[1];
 Rocket rocket = new Rocket();
 Barrier barrier1 = new Barrier();
+Barrier barrier2 = new Barrier();
+
 
 void mousePressed()
 {
@@ -152,7 +155,9 @@ void game()
   popMatrix();
   
   barrier1.display(); // obstacles
+  barrier2.display();
   barrier1.update();
+  barrier2.update();
   
   rocket.x = 75;
   rocket.display();
