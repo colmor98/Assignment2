@@ -154,10 +154,13 @@ void game()
   rect(0, height , width+900, 35); // bottom barrier
   popMatrix();
   
+  pushMatrix();
+  fill(88,42,4);
   barrier1.display(); // obstacles
   barrier2.display();
   barrier1.update();
   barrier2.update();
+  popMatrix();
   
   rocket.x = 75;
   rocket.display();

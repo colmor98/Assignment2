@@ -17,7 +17,7 @@ class Barrier
   void display()
   {
     noStroke();
-    rect(x, y, w, h);
+    rect(x, y, w, h,30);
   }
   void update() 
   {
