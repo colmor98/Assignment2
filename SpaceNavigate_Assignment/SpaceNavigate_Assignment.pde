@@ -50,7 +50,7 @@ int enter = 0;
 //Font
 PFont font;
 
-//Objects
+//Classes
 Star[] stars = new Star[1];
 Rocket rocket = new Rocket();
 
@@ -137,6 +137,12 @@ void load()
 void game()
 {
   background(0);
+  
+  pushMatrix();
+  fill(4,23,88);
+  rect(0, 0, width+900, 30); // top barrier
+  rect(0, height , width+900, 30); // bottom barrier
+  popMatrix();
   
   rocket.x = 75;
   rocket.display();
