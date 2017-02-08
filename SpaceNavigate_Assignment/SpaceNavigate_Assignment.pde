@@ -179,7 +179,8 @@ void game()
   
   if (rocket.crashed) {
       textAlign(CENTER);
-      text("Press r to restart", width / 2, height - 21);
+      text("Press r to restart else", width / 2, height - 40);
+      text("Press e to exit",width/2, height - 21);
       textSize(50);
       text("GAME OVER", width / 2, height / 2);
     }
@@ -231,6 +232,11 @@ void keyPressed()
     rocket.ySpeed = 0;
     score = 0;
   }
+  
+  if(key == 'e'){
+   exit(); 
+  }
+  
   if (key == CODED) {
     if (keyCode == UP) {
       rocket.ySpeed -= 1;
