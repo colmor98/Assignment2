@@ -46,6 +46,8 @@ float arcBoundSize, arcMaxBoundSize = 500;
 int[] button = new int[5];
 int col=0;
 int enter = 0;
+int score = 0; 
+
 
 //Font
 PFont font;
@@ -140,13 +142,26 @@ void game()
   
   pushMatrix();
   fill(4,23,88);
-  rect(0, 0, width+900, 30); // top barrier
-  rect(0, height , width+900, 30); // bottom barrier
+  rect(0, 0, width+900, 35); // top barrier
+  rect(0, height , width+900, 35); // bottom barrier
   popMatrix();
   
   rocket.x = 75;
   rocket.display();
   rocket.update();
+  
+  // text
+  textSize(20);
+  fill(255);
+  textAlign(LEFT);
+  
+  text("Score:", 10, 14); // score counter
+  text(score, 70, 14);
+    
+  text("Lives:", 725, height - 1); // life counter
+  text(rocket.lives, 780, height - 1);
+  
+  
 }
 
 void draw()

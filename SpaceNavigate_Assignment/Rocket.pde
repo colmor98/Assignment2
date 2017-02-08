@@ -3,11 +3,13 @@ class Rocket
     float x;
     float y;
     float ySpeed;
+    int lives;
     
     Rocket() {
       x = 75;
       y = 500 / 2;
       ySpeed = 0;
+      lives = 1;
     }
   
   void display() {
