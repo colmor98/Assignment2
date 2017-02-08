@@ -9,9 +9,14 @@ class ParticleSystem
   }
 
   void addParticle() {
-    
-      particles.add(new Particle(origin));
-    
+      float r = random(1);
+      if(r < 0.4)
+      {
+        particles.add(new Particle(origin));
+      }
+      else{
+        particles.add(new SquareParticle(origin));
+      }
   }
 
   void run() {
