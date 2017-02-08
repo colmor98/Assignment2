@@ -122,23 +122,23 @@ void load()
   fill(255);
       if (frameCount <= 50)
       {
-         text("Loading.", width/2 - 100, height/2); 
+         text("Making lunch..", width/2 - 140, height/2); 
       }
       if( frameCount <100 && frameCount >= 50)
       {
-         text("Loading..", width/2 - 100, height/2); 
+         text("Drinking coffee..", width/2 - 150, height/2); 
       }
       if( frameCount <150 && frameCount >= 100)
       {
-         text("Loading...", width/2 - 100, height/2); 
+         text("Quick trip to\nthe bathroom..", width/2 - 140, height/2-25); 
       }
       if( frameCount <200 && frameCount >= 150)
       {
-         text("Loading....", width/2 - 100, height/2); 
+         text("Safety check..", width/2 - 140, height/2); 
       }
       if(frameCount<250 && frameCount >=200)
       {
-        text("Setting up!",width/2 - 110,height/2);
+        text("Filling fuel!",width/2 - 110,height/2);
       }
   
 }//end load
