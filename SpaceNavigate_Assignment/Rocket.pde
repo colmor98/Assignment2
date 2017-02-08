@@ -28,6 +28,18 @@ class Rocket
       crashed = true;
     }
     
+    if ((x + 50 >= barrier1.x && x - 40 <= barrier1.x + barrier1.w
+      && y + 7 >= barrier1.y && y - 7 <= barrier1.y + barrier1.h) ||
+      (x + 25 >= barrier1.x && x - 35 <= barrier1.x + barrier1.w
+      && y + 15 >= barrier1.y && y - 15 <= barrier1.y + barrier1.h)) {
+      if (lives == 1) {
+        rocket.crashed = true;
+      } else {
+        lives--;
+        barrier1.x = 800;
+      }
+    }
+    
     rocketShip();
   }
   
