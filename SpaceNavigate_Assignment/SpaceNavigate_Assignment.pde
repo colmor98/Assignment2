@@ -186,7 +186,7 @@ void game()
         text("GAME OVER", width / 2, height / 2);
       popMatrix();
       
-      if( (rocket.crashed == true) && ( score > 5) )
+      if( (rocket.crashed == true) && ( score > 3) )
       {
         
        text("New high score !", width/2, height/2-50);
