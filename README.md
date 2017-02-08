@@ -1,2 +1,5 @@
 # Assignment2
-Repositry to hold my second assignment where a spaceship must navigate thought space and avoid asteroids 
+
+[![Video](http://img.youtube.com/vi/https://youtu.be/J7p0G8RDGdc/0.jpg)](http://www.youtube.com/watch?v=https://youtu.be/J7p0G8RDGdc)
+
+
