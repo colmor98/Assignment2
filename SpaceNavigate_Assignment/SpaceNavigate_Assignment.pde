@@ -35,6 +35,8 @@ void setup()
   button[3] = 150;
   button[4] = 0;
   
+  ps = new ParticleSystem(new PVector(width/2, 50));
+  
    for (int i = 0; i < stars.length; i++)  
     {
       stars[i] = new Star ((color(200)),random(width),0,100);  //element i within stars is a new star with these properties
@@ -62,6 +64,8 @@ Star[] stars = new Star[1];
 Rocket rocket = new Rocket();
 Barrier barrier1 = new Barrier();
 Barrier barrier2 = new Barrier();
+ParticleSystem ps;
+
 
 
 void mousePressed()
@@ -188,7 +192,8 @@ void game()
       
       if( (rocket.crashed == true) && ( score > 3) )
       {
-        
+        ps.addParticle();
+        ps.run();
        text("New high score !", width/2, height/2-50);
       }
     }
