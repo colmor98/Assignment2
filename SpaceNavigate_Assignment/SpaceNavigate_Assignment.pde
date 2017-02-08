@@ -2,7 +2,7 @@
 Author: Colm O'Reilly
 Student number: C15502723
 
-A game where a spaceship must navigaye its way through space!
+A game where a spaceship must navigate its way through space, avoiding barriers!
 
 */
 
@@ -156,7 +156,7 @@ void game()
   
   pushMatrix();
   fill(88,42,4);
-  barrier1.display(); // obstacles
+  barrier1.display(); // barriers to be avoided
   barrier2.display();
   barrier1.update();
   barrier2.update();
@@ -181,8 +181,16 @@ void game()
       textAlign(CENTER);
       text("Press r to restart else", width / 2, height - 40);
       text("Press e to exit",width/2, height - 21);
-      textSize(50);
-      text("GAME OVER", width / 2, height / 2);
+      pushMatrix();
+        textSize(50);
+        text("GAME OVER", width / 2, height / 2);
+      popMatrix();
+      
+      if( (rocket.crashed == true) && ( score > 5) )
+      {
+        
+       text("New high score !", width/2, height/2-50);
+      }
     }
   
 }
