@@ -4,7 +4,8 @@ class Rocket
     float y;
     float ySpeed;
     int lives;
-    
+    boolean crashed = false;
+
     Rocket() {
       x = 75;
       y = 500 / 2;
@@ -13,6 +14,19 @@ class Rocket
     }
   
   void display() {
+    
+    //if crashed, screen will stop 'scrolling'
+    if (crashed) {
+      fill(#FF0000);
+      ySpeed = 0;
+      barrier1.xSpeed = 0;
+      barrier2.xSpeed = 0;
+    }
+    
+    // check if the copter crashed
+    if (y <= 40 || y >= height - 40) {
+      crashed = true;
+    }
     
     rocketShip();
   }
