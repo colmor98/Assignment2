@@ -179,6 +179,7 @@ void game()
   
   if (rocket.crashed) {
       textAlign(CENTER);
+      text("Press r to restart", width / 2, height - 21);
       textSize(50);
       text("GAME OVER", width / 2, height / 2);
     }
@@ -212,7 +213,24 @@ void draw()
 
 void keyPressed() 
 {
-  
+  if (key == 'r') {
+    // reset all
+    barrier1.y = random(50, height - barrier1.h - 50);
+    barrier2.y = random(50, height - barrier2.h - 50);
+    barrier1.x = 800;
+    barrier2.x = barrier1.x + 400;
+    barrier1.xSpeed = -4;
+    barrier1.w = 10;
+    barrier1.h = random(80, 120);
+    barrier2.xSpeed = -4;
+    barrier2.w = 10;
+    barrier2.h = random(80, 120);
+    rocket.crashed = false;
+    rocket.x = 75;
+    rocket.y = 500 / 2;
+    rocket.ySpeed = 0;
+    score = 0;
+  }
   if (key == CODED) {
     if (keyCode == UP) {
       rocket.ySpeed -= 1;

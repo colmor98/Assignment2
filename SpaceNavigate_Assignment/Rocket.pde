@@ -23,7 +23,7 @@ class Rocket
       barrier2.xSpeed = 0;
     }
     
-    // check if the copter crashed
+    // check if the rocket crashed
     if (y <= 40 || y >= height - 40) {
       crashed = true;
     }
