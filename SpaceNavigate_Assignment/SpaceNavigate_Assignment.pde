@@ -1,3 +1,4 @@
+
 /*
 Author: Colm O'Reilly
 Student number: C15502723
@@ -5,6 +6,7 @@ Student number: C15502723
 A game where a spaceship must navigate its way through space, avoiding barriers!
 
 */
+
 
 void setup()
 {
